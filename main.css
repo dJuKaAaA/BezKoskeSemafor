@@ -1,0 +1,84 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent; /* For Streamlabs overlay */
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Scoreboard container */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    padding: 10px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Team containers */
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+/* Team name */
+.team-name {
+    font-size: 1.0em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #f39c12;
+    font-weight: bold;
+}
+
+/* Score */
+.score {
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Middle section */
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* Quarter */
+.quarter {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Timer */
+.timer {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .scoreboard {
+        flex-direction: column;
+        text-align: center;
+    }
+    .middle {
+        margin: 15px 0;
+    }
+    .score {
+        font-size: 2.5em;
+    }
+}
