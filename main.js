@@ -24,10 +24,11 @@ async function fetchScoreboardData() {
                 "ngrok-skip-browser-warning": "true"
             }
         });
-        console.log(response);
-        data.team1.score = response.team1Score;
-        data.team2.score = response.team2Score;
-        data.period = response.period;
+        const body = await response.json();
+        console.log(body);
+        data.team1.score = body.team1Score;
+        data.team2.score = body.team2Score;
+        data.period = body.period;
         document.getElementById('score1').textContent = data.team1.score;
         document.getElementById('score2').textContent = data.team2.score;
         document.getElementById('period').textContent = data.period;
