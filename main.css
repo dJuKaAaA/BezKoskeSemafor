@@ -53,8 +53,8 @@ body {
     flex: 1;
 }
 
-/* Quarter */
-.quarter {
+/* Period */
+.period {
     font-size: 1.2em;
     text-transform: uppercase;
     color: #e74c3c;

@@ -7,9 +7,10 @@ data = {
         name: "CitRus",
         score: 0
     },
-    clockMinutes: 10,
-    clockSeconds: 0,
-    quarter: 1
+    clockMinutes: 10,   // Deprecated
+    clockSeconds: 0,    // Deprecated
+    quarter: 1,         // Deprecated
+    period: "Period 1"
 };
 document.getElementById('team1-name').textContent = data.team1.name;
 document.getElementById('team2-name').textContent = data.team2.name;
@@ -23,28 +24,18 @@ async function fetchScoreboardData() {
                 "ngrok-skip-browser-warning": "true"
             }
         });
-        console.log(await response.json());
-
-        if (Math.random() < 0.5) {
-            if (Math.random() < 0.5) {
-                data.team1.score += 2;
-            } else {
-                data.team1.score += 3;
-            }
-        } else {
-            if (Math.random() < 0.5) {
-                data.team2.score += 2;
-            } else {
-                data.team2.score += 3;
-            }
-        }
+        data.team1.score = response.team1Score;
+        data.team2.score = response.team2Score;
+        data.period = response.period;
         document.getElementById('score1').textContent = data.team1.score;
         document.getElementById('score2').textContent = data.team2.score;
+        document.getElementById('period').textContent = data.period;
     } catch (error) {
         console.error('Error fetching scoreboard data:', error);
     }
 }
 
+// Deprecated
 function moveClock() {
     data.clockSeconds--;
     if (data.clockSeconds < 0) {
@@ -67,6 +58,6 @@ function moveClock() {
     document.getElementById('quarter').textContent = `Q${data.quarter}`;
 }
 
-setInterval(fetchScoreboardData, 5000); // Fetch data every 5 seconds
-setInterval(moveClock, 1000)
-fetchScoreboardData(); // Initial fetch
+const FETCH_INTERVAL = 5000;
+setInterval(fetchScoreboardData, FETCH_INTERVAL);
+fetchScoreboardData();
