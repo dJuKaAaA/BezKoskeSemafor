@@ -24,6 +24,7 @@ async function fetchScoreboardData() {
                 "ngrok-skip-browser-warning": "true"
             }
         });
+        console.log(response);
         data.team1.score = response.team1Score;
         data.team2.score = response.team2Score;
         data.period = response.period;
