@@ -15,7 +15,7 @@ data = {
 document.getElementById('team1-name').textContent = data.team1.name;
 document.getElementById('team2-name').textContent = data.team2.name;
 
-const SERVER_URL = "https://e655-188-2-53-44.ngrok-free.app"
+const SERVER_URL = "https://5c4d-188-2-53-44.ngrok-free.app"
 
 async function fetchScoreboardData() {
     try {
