@@ -4,7 +4,7 @@ data = {
         score: 0
     },
     team2: {
-        name: "CitRus",
+        name: "Krvavi radnici",
         score: 0
     },
     clockMinutes: 10,   // Deprecated
